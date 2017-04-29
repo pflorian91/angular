@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
+import {
+  Component
+} from '@angular/core';
 
 @Component({
   selector: 'sd-app',
-  template: `<h1>{{title}}</h1><h2>{{hero.name}} details!</h2>`
+  template: `
+    <h1>{{title}}</h1>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/heroes">Heroes</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+  providers: []
 })
 
 export class AppComponent {
   
   title = 'Tour of Heroes';
   
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
-  
-}
-
-export class Hero {
-  id: number;
-  name: string;
 }
